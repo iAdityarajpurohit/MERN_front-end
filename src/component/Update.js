@@ -14,7 +14,7 @@ import '../App.css'
     getProductDetail();
   }, []);
   const getProductDetail =async()=>{
-     let result =  await fetch(`http://localhost:5000/product/${params.id}`);
+     let result =  await fetch(`https://twond-ngm0.onrender.com/product/${params.id}`);
      result =  await result.json();
      console.log(result);
         setName(result.name);
@@ -24,7 +24,7 @@ import '../App.css'
   };
     const updateHandler = async()=>{
           console.log(name,price,category,company);
-      let result = await fetch(`http://localhost:5000/product/${params.id}`,{
+      let result = await fetch(`https://twond-ngm0.onrender.com/product/${params.id}`,{
         method:'put',
         body:JSON.stringify({name,price,category,company}),
         headers:{
