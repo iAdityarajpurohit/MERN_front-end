@@ -16,7 +16,7 @@ import '../App.css'
 
           console.log(name,price,category,company);
           const userId =JSON.parse (localStorage.getItem('users'))._id;
-         let result = await fetch('http://localhost:5000/add-product',{
+         let result = await fetch('https://twond-ngm0.onrender.com/add-product',{
             method:'post',
             body: JSON.stringify({name,price,category,company,userId}),
             headers:{

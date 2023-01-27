@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
         getProduct();
     }, [])
     const getProduct= async()=>{
-        let result = await fetch('http://localhost:5000/products');
+        let result = await fetch('https://twond-ngm0.onrender.com/products');
         result = await result.json();
         setProduct(result);
     }
 
     const deleteHandler = async (id)=>{
-         let result = fetch(`http://localhost:5000/product/${id}`,{
+         let result = fetch(`https://twond-ngm0.onrender.com/product/${id}`,{
            method:"Delete"
          })
          result = await result.json()
@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom';
        let key = event.target.value;
        if(key){
 
-           let result = await fetch(`http://localhost:5000/search/${key}`);
+           let result = await fetch(`https://twond-ngm0.onrender.com/search/${key}`);
            result = await result.json();
            if(result){
                setProduct(result)
